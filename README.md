@@ -6,7 +6,7 @@ http://paperjs.org/examples/path-simplification/
 
 ## Example
 ```cs
-// Get CubicBezierSegments
+// Calculate CubicBezierSegments from SKPoints
 var points = new [] { new SKPoint(0, 1), new SKPoint (2, 3), new SKPoint(4, 5) };
 var isClosed = false;
 var error = 2.5;
