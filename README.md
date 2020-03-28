@@ -1,12 +1,12 @@
 # Spillman.SkiaSharp.PathFitter
 
-Recreation of the Path.simplify() method from paper.js for SkiaSharp
+Recreation of the [Path.simplify() method from paper.js](http://paperjs.org/examples/path-simplification/) for SkiaSharp
 
-http://paperjs.org/examples/path-simplification/
+[NuGet package](https://www.nuget.org/packages/Spillman.SkiaSharp.PathFitter)
 
 ## Example
 ```cs
-// Get CubicBezierSegments
+// Calculate CubicBezierSegments from SKPoints
 var points = new [] { new SKPoint(0, 1), new SKPoint (2, 3), new SKPoint(4, 5) };
 var isClosed = false;
 var error = 2.5;
