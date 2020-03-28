@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>Spillman.SkiaSharp</RootNamespace>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>Dalton Spillman</Authors>
+    <Product />
+    <Description>Recreation of the Path.simplify() method from paper.js for SkiaSharp</Description>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/daltonks/Spillman.SkiaSharp.PathFitter</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/daltonks/Spillman.SkiaSharp.PathFitter</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageReleaseNotes>Initial release!</PackageReleaseNotes>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="SkiaSharp" Version="1.68.1.1" />
+  </ItemGroup>
+
+</Project>
