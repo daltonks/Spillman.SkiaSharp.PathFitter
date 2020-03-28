@@ -40,7 +40,7 @@ namespace Spillman.SkiaSharp
             _closed = closed;
         }
 
-        public List<CubicBezierSegment> Fit(double error)
+        public List<CubicBezierSegment> Fit(double error = 2.5)
         {
             if (!_points.Any())
             {
