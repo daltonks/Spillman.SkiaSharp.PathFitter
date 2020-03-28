@@ -1,8 +1,8 @@
 # Spillman.SkiaSharp.PathFitter
 
-Recreation of the Path.simplify() method from paper.js for SkiaSharp
+Recreation of the [Path.simplify() method from paper.js](http://paperjs.org/examples/path-simplification/) for SkiaSharp
 
-http://paperjs.org/examples/path-simplification/
+[NuGet package](https://www.nuget.org/packages/Spillman.SkiaSharp.PathFitter)
 
 ## Example
 ```cs
