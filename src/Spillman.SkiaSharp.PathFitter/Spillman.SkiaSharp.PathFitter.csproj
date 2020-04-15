@@ -11,7 +11,8 @@
     <PackageProjectUrl>https://github.com/daltonks/Spillman.SkiaSharp.PathFitter</PackageProjectUrl>
     <RepositoryUrl>https://github.com/daltonks/Spillman.SkiaSharp.PathFitter</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <PackageReleaseNotes>Initial release!</PackageReleaseNotes>
+    <PackageReleaseNotes>Fixed SKPath.GetCubicSegments() missing one point for paths that begin with lines</PackageReleaseNotes>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>

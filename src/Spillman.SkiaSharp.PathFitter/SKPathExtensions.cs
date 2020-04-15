@@ -82,7 +82,7 @@ namespace Spillman.SkiaSharp
             using (var iterator = path.CreateRawIterator())
             {
                 var points = new SKPoint[4];
-                CubicBezierSegment partialSegment = null;
+                CubicBezierSegment previousSegment = null;
                 while (true)
                 {
                     var verb = iterator.Next(points);
@@ -90,26 +90,32 @@ namespace Spillman.SkiaSharp
                     switch (verb)
                     {
                         case SKPathVerb.Line:
-                            partialSegment = null;
-                            segments.Add(new CubicBezierSegment(points[1]));
+                            if (previousSegment == null)
+                            {
+                                previousSegment = new CubicBezierSegment(points[0]);
+                                segments.Add(previousSegment);
+                            }
+
+                            previousSegment = new CubicBezierSegment(points[1]);
+                            segments.Add(previousSegment);
 
                             break;
                         case SKPathVerb.Cubic:
-                            if (partialSegment == null)
+                            if (previousSegment == null)
                             {
-                                partialSegment = new CubicBezierSegment(points[0]);
-                                segments.Add(partialSegment);
+                                previousSegment = new CubicBezierSegment(points[0]);
+                                segments.Add(previousSegment);
                             }
-                            partialSegment.HandleOut = points[1] - partialSegment.Point;
+                            previousSegment.HandleOut = points[1] - previousSegment.Point;
 
-                            partialSegment = new CubicBezierSegment(points[3]) { HandleIn = points[2] - points[3] };
-                            segments.Add(partialSegment);
+                            previousSegment = new CubicBezierSegment(points[3]) { HandleIn = points[2] - points[3] };
+                            segments.Add(previousSegment);
 
                             break;
                         case SKPathVerb.Done:
                             return segments;
                         default:
-                            partialSegment = null;
+                            previousSegment = null;
                             break;
                     }
                 }
