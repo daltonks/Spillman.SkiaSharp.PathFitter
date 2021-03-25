@@ -11,12 +11,12 @@
     <PackageProjectUrl>https://github.com/daltonks/Spillman.SkiaSharp.PathFitter</PackageProjectUrl>
     <RepositoryUrl>https://github.com/daltonks/Spillman.SkiaSharp.PathFitter</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <PackageReleaseNotes>Fixed SKPath.GetCubicSegments() missing one point for paths that begin with lines</PackageReleaseNotes>
-    <Version>1.0.1</Version>
+    <PackageReleaseNotes>Reduced allocations. Added some AggressiveInlining.</PackageReleaseNotes>
+    <Version>1.0.2</Version>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="SkiaSharp" Version="1.68.1.1" />
+    <PackageReference Include="SkiaSharp" Version="2.80.2" />
   </ItemGroup>
 
 </Project>

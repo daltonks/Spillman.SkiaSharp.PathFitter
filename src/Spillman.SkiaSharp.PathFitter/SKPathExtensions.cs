@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using SkiaSharp;
 
@@ -81,7 +82,7 @@ namespace Spillman.SkiaSharp
 
             using (var iterator = path.CreateRawIterator())
             {
-                var points = new SKPoint[4];
+                var points = new Span<SKPoint>(new SKPoint[4]);
                 CubicBezierSegment previousSegment = null;
                 while (true)
                 {
