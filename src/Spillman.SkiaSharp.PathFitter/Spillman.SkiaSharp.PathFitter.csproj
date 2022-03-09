@@ -11,8 +11,8 @@
     <PackageProjectUrl>https://github.com/daltonks/Spillman.SkiaSharp.PathFitter</PackageProjectUrl>
     <RepositoryUrl>https://github.com/daltonks/Spillman.SkiaSharp.PathFitter</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <PackageReleaseNotes>Reduced allocations. Added some AggressiveInlining.</PackageReleaseNotes>
-    <Version>1.0.2</Version>
+    <PackageReleaseNotes>Created an overload of AddCubicSegments with 'moveToFirstPoint'.</PackageReleaseNotes>
+    <Version>1.0.3</Version>
   </PropertyGroup>
 
   <ItemGroup>

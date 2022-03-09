@@ -8,14 +8,23 @@ namespace Spillman.SkiaSharp
     // ReSharper disable once InconsistentNaming
     public static class SKPathExtensions
     {
+        public static void AddCubicSegments(this SKPath path, IReadOnlyCollection<CubicBezierSegment> segments, bool closed)
+        {
+            // ReSharper disable once IntroduceOptionalParameters.Global
+            AddCubicSegments(path, segments, closed, moveToFirstPoint: true);
+        }
+
         // Based on the paper.js implementation of Path.drawSegments
         // https://github.com/paperjs/paper.js/blob/develop/src/path/Path.js
-        public static void AddCubicSegments(this SKPath path, IReadOnlyCollection<CubicBezierSegment> segments, bool closed)
+        public static void AddCubicSegments(this SKPath path, IReadOnlyCollection<CubicBezierSegment> segments, bool closed, bool moveToFirstPoint)
         {
             if (segments.Count == 1)
             {
                 var segment = segments.First();
-                path.MoveTo(segment.Point);
+                if (moveToFirstPoint)
+                {
+                    path.MoveTo(segment.Point);
+                }
                 path.LineTo(segment.Point);
                 return;
             }
@@ -47,7 +56,10 @@ namespace Spillman.SkiaSharp
                 curY = point.Y;
                 if (first)
                 {
-                    path.MoveTo(curX, curY);
+                    if (moveToFirstPoint)
+                    {
+                        path.MoveTo(curX, curY);
+                    }
                     first = false;
                 }
                 else
